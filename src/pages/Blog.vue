@@ -23,3 +23,11 @@ query Posts {
   }
 }
 </page-query>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Blog'
+  }
+}
+</script>
