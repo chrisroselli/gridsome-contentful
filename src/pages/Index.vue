@@ -10,7 +10,7 @@
 </template>
 
 <page-query>
-query Page {
+query Home {
 	contentfulPage(id:"695ls1eS7WSVhC1ZhV5gaz") {
     id
     title
