@@ -1,14 +1,32 @@
 <template>
   <Layout>
-    <h1>About us</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+    
+<h1>{{$page.contentfulPage.title}}</h1>
+<p v-html="richtextToHTML($page.contentfulPage.mainContent)"></p>
   </Layout>
 </template>
 
+<page-query>
+query Page {
+	contentfulPage(id:"7KeAXmdIkIQM3RAvFNjJ0t") {
+    id
+    title
+    mainContent
+  }
+}
+</page-query>
+
 <script>
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+
 export default {
   metaInfo: {
     title: 'About us'
+  },
+    methods: {
+    richtextToHTML (content) {
+      return documentToHtmlString(content)
+    }
   }
 }
 </script>
